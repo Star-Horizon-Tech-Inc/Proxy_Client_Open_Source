@@ -1,0 +1,24 @@
+﻿<Page
+    x:Class="Client.Control_Center"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+    xmlns:local="using:Client"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid>
+        <muxc:NavigationView PaneDisplayMode="Left" IsPaneToggleButtonVisible="False" IsSettingsVisible="False"  x:Name="NavView" IsBackButtonVisible="Collapsed" Loaded="NavView_Loaded" ItemInvoked="NavView_ItemInvoked" BackRequested="NavView_BackRequested">
+            <muxc:NavigationView.MenuItems>
+                <muxc:NavigationViewItem  Icon="Home" Content="主页" Tag="home" />
+                <muxc:NavigationViewItem Icon="Map" Content="节点列表" Tag="node_lists" />
+                <muxc:NavigationViewItem Visibility="Collapsed" Icon="Shop" Content="购买订阅" Tag="shop" />
+                <muxc:NavigationViewItem Visibility="Collapsed" Icon="People" Content="邀请返利" Tag="referred" />
+                <muxc:NavigationViewItem Visibility="Collapsed" Icon="Mail" Content="我的工单" Tag="ticket" />
+                <muxc:NavigationViewItem Icon="WebCam" Visibility="Collapsed" Content="个人中心" Tag="profile" />
+            </muxc:NavigationView.MenuItems>
+            <Frame x:Name="ContentFrame"></Frame>
+        </muxc:NavigationView>
+    </Grid>
+</Page>

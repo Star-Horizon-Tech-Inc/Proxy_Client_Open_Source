@@ -1,0 +1,60 @@
+﻿<Page
+    x:Class="Client.Home"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Client"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid>
+
+        <StackPanel Margin="20">
+            <TextBlock FontSize="20" FontFamily="Arial" Margin="0,0,0,10">连接状态
+            </TextBlock>
+            <Canvas Height="100" Width="460">
+                <Line X1="10" Y1="20" X2="45" Y2="20" Stroke="Black" StrokeThickness="2" />
+                <Line X1="10" Y1="45" X2="45" Y2="45" Stroke="Black" StrokeThickness="2" />
+                <Line X1="10" Y1="20" X2="10" Y2="45" Stroke="Black" StrokeThickness="2" />
+                <Line X1="45" Y1="20" X2="45" Y2="45" Stroke="Black" StrokeThickness="2" />
+                <Line X1="5" Y1="55" X2="10" Y2="45" Stroke="Black" StrokeThickness="2" />
+                <Line X1="45" Y1="45" X2="50" Y2="55" Stroke="Black" StrokeThickness="2" />
+                <Line X1="5" Y1="55" X2="50" Y2="55" Stroke="Black" StrokeThickness="2" />
+                <Line X1="65" Y1="40" X2="130" Y2="40" Stroke="Black" StrokeThickness="2" Visibility="Collapsed" />
+                <Line X1="65" Y1="40" X2="70" Y2="40" Stroke="Black" StrokeThickness="1" />
+                <Line X1="75" Y1="40" X2="80" Y2="40" Stroke="Black" StrokeThickness="1" />
+                <Line X1="85" Y1="40" X2="90" Y2="40" Stroke="Black" StrokeThickness="1" />
+                <Line X1="95" Y1="40" X2="100" Y2="40" Stroke="Black" StrokeThickness="1" />
+                <Line X1="105" Y1="40" X2="110" Y2="40" Stroke="Black" StrokeThickness="1" />
+                <Line X1="115" Y1="40" X2="120" Y2="40" Stroke="Black" StrokeThickness="1" />
+                <Line X1="125" Y1="40" X2="130" Y2="40" Stroke="Black" StrokeThickness="1" />
+                <Ellipse x:Name="EL1" Visibility="Collapsed" Canvas.Top="15" Canvas.Left="145" Height="50" Width="50" StrokeThickness="2" Stroke="Black" />
+                <Line x:Name="ELL1" Visibility="Collapsed" X1="147" Y1="35" X2="193" Y2="35" Stroke="Black" StrokeThickness="2" />
+                <Line x:Name="ELL2" Visibility="Collapsed" X1="147" Y1="48" X2="193" Y2="48" Stroke="Black" StrokeThickness="2" />
+                <Ellipse x:Name="EL2" Visibility="Collapsed" Canvas.Top="15" Canvas.Left="157.5" Height="50" Width="25" StrokeThickness="2" Stroke="Black" />
+                <TextBlock Canvas.Left="137.5" Canvas.Top="65">代理服务器</TextBlock>
+            </Canvas>
+            <TextBlock FontSize="20" FontFamily="Arial" Margin="0,20,0,20">您还未连接到代理服务器</TextBlock>
+            <ToggleSwitch Header="连接到代理服务器" x:Name="U_Control_Status" Toggled="ToggleSwitch_Toggled" OffContent="未连接" OnContent="已连接" IsOn="False" />
+            <ComboBox x:Name="Select_Server" SelectedIndex="0" PlaceholderText="选择连接到的代理服务器" SelectionChanged="Select_Server_SelectionChanged"  Width="200">
+            </ComboBox>
+            <StackPanel Orientation="Horizontal" Margin="0,30,0,0">
+                <FontIcon FontSize="40" FontFamily="Segoe MDL2 Assets" Glyph="&#xe7b8;" />
+                <StackPanel Orientation="Vertical">
+                    <TextBlock x:Name="sub_name" Text="订阅信息" FontSize="17" FontFamily="Arial" Margin="10,0,0,0"/>
+                    <TextBlock x:Name="sub_exp" Text="有效期" FontSize="15" FontFamily="Arial" Foreground="DarkGray" Margin="10,0,0,0"/>
+                </StackPanel>
+                <muxc:ProgressBar VerticalAlignment="Center" x:Name="used_bar" Width="150" Value="0" HorizontalAlignment="Right" Margin="10,0,0,0"/>
+                <StackPanel Orientation="Vertical">
+                    <TextBlock HorizontalAlignment="Right" Text="已使用流量/总流量" FontSize="15" Foreground="Black" FontFamily="Arial" Margin="10,0,0,0"/>
+                    <TextBlock VerticalAlignment="Bottom" x:Name="used_all" HorizontalAlignment="Right" Text="NaN /NaN GB" FontSize="15" Foreground="DarkGray" FontFamily="Arial" Margin="10,0,0,0"/>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+        <muxc:TeachingTip PreferredPlacement="TopRight" x:Name="Start_Suc" Title="启动成功"/>
+        <muxc:TeachingTip PreferredPlacement="TopRight" x:Name="Start_Fail" Title="启动失败" Subtitle="详情请向网站运营人员咨询"/>
+        <muxc:TeachingTip PreferredPlacement="TopRight" x:Name="Change_Fail" Title="所选代理设置不可用" Subtitle="详情请向网站运营人员咨询"/>
+        <muxc:TeachingTip PreferredPlacement="TopRight" x:Name="Clash_Err" Title="Clash未启动" Subtitle="请向网站运营人员反馈"/>
+    </Grid>
+</Page>

@@ -1,0 +1,53 @@
+﻿<Page
+    x:Class="Client.Shop"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Client"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:x1="using:Microsoft.UI.Xaml.Data"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    >
+
+    <Grid>
+        <ListView
+    x:Name="FilteredListView"
+    SelectionMode="Single"
+    ShowsScrollingPlaceholders="True"
+    Height="600"
+    Width="500"
+    BorderThickness="1"
+    BorderBrush="{ThemeResource SystemControlForegroundBaseMediumLowBrush}">
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="local:Shops">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Ellipse x:Name="Ellipse" Grid.RowSpan="2" Width="32" Height="32" Margin="6"
+	VerticalAlignment="Center" HorizontalAlignment="Center" Fill="{ThemeResource SystemControlBackgroundBaseMediumBrush}"
+	/>
+                        <TextBlock Grid.Column="1" Text="{x:Bind Name}" x:Phase="1" Style="{ThemeResource BaseTextBlockStyle}"
+	Margin="12,6,0,0" />
+                        <TextBlock Grid.Column="1" Width="Auto" TextWrapping="Wrap" Grid.Row="1" Text="{x:Bind Content}" x:Phase="2"
+	Style="{ThemeResource BodyTextBlockStyle}" Margin="12,0,0,6" />
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <StackPanel Width="200" Background="LightGray" HorizontalAlignment="Right">
+            <TextBlock Margin="8,8,8,4" Style="{ThemeResource BaseTextBlockStyle}">选择订阅并购买</TextBlock>
+            <TextBlock x:Name="FilterByFirstName" Width="150" Text="订阅名称" Margin="8"
+	     HorizontalAlignment="Left"/>
+            <TextBlock x:Name="FilterByLastName" Width="150" Text="订阅介绍" Margin="8"
+	     HorizontalAlignment="Left"/>
+            <TextBlock x:Name="FilterByCompany" Width="150" Text="NaN 元/月" Margin="8"
+	     HorizontalAlignment="Left"/>
+        </StackPanel>
+    </Grid>
+</Page>

@@ -1,0 +1,30 @@
+﻿<Page
+    x:Class="Client.Profile"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Client"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <StackPanel>
+            <TextBlock FontSize="20" Margin="10">管理登陆方式</TextBlock>
+            <StackPanel Margin="10" Height="Auto" Width="Auto" Orientation="Horizontal">
+                    <FontIcon FontSize="30" Glyph="&#xe8d7;" />
+                <StackPanel Margin="5">
+                    <TextBlock FontSize="15">密码</TextBlock>
+                    <TextBlock FontSize="15" Foreground="DarkGray">使用你的账户密码来登录</TextBlock>
+                    <Button HorizontalAlignment="Left">更改密码</Button>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Margin="15" Visibility="Collapsed">
+                <TextBlock FontSize="17" Foreground="MediumBlue">Telegram</TextBlock>
+                <TextBlock FontSize="15" >您的Telegram ID是:  <Span Foreground="DarkBlue">123456789</Span></TextBlock>
+                <TextBlock FontSize="15">你还没有绑定Telegram</TextBlock>
+                <Button>立即绑定</Button>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>

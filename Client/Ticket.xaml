@@ -1,0 +1,27 @@
+﻿<Page
+    x:Class="Client.Ticket"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Client"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <StackPanel>
+        <Button Margin="10" HorizontalAlignment="Left" VerticalAlignment="Top">发起工单</Button>
+        <ListView Margin="5,20,5,0" SelectionMode="None" IsItemClickEnabled="False">
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="IsFocusEngagementEnabled" Value="True"/>
+                    <Setter Property="Background" Value="WhiteSmoke" />
+                </Style>
+            </ListView.ItemContainerStyle>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Width="200">工单主题</TextBlock>
+                <TextBlock Width="110">2021/11/28 02:40</TextBlock>
+                <TextBlock Margin="40,0,0,0" Width="50">状态</TextBlock>
+                <TextBlock Margin="15,0,0,0">查看</TextBlock>
+            </StackPanel>
+        </ListView>
+    </StackPanel>
+</Page>
